@@ -5,11 +5,10 @@
     <script src="./node_modules/eslint-linter-browserify/linter.js"></script>
 </head>
 <body>
+    <textarea id="message" value=""></textarea>
     <button id="envoyerMessage">Envoyer un message au worker</button>
 
     <script>
-        toto = "window.fillTable = function(byBlock) { if (byBlock === 'regexp') { const table = 12; const toto = 1; console.log(table); } else if (byBlock === 'native') {const table = 34; const toto = 2; console.log(table); } else if (byBlock === 'svg') { const table = 'TABLE'; const toto = 3; console.log(table) } else { const toto = 4; const tds = document.querySelectorAll('table.fill-me tbody td'); for (const td of tds) { td.innerHTML = '<span>test</span>';}}};"
-
 rules = {
 rules: 
     {
@@ -208,6 +207,7 @@ rules:
         document.getElementById('envoyerMessage').addEventListener('click', () => {
             // Utilisez la méthode postMessage pour envoyer un message au worker
             console.log('Bouton cliqué !');
+            const toto = document.getElementById('message').value;
             const resLint = linter.verify(toto, rules);
             console.log(resLint)
         });
