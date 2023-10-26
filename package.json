@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "eslint-linter-browserify": "^8.31.0"
+  },
+  "scripts": {
+	  "build": "browserify worker.js -o eslint.js"
+  }
+}
